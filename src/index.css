@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 96%;
+    --foreground: 150 20% 15%;
+
+    --card: 36 30% 98%;
+    --card-foreground: 150 20% 15%;
+
+    --popover: 36 30% 98%;
+    --popover-foreground: 150 20% 15%;
+
+    --primary: 152 35% 28%;
+    --primary-foreground: 36 33% 96%;
+
+    --secondary: 36 40% 90%;
+    --secondary-foreground: 150 20% 15%;
+
+    --muted: 36 20% 92%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 38 75% 55%;
+    --accent-foreground: 150 20% 15%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 36 33% 96%;
+
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 152 35% 28%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 36 30% 98%;
+    --sidebar-foreground: 150 20% 15%;
+    --sidebar-primary: 152 35% 28%;
+    --sidebar-primary-foreground: 36 33% 96%;
+    --sidebar-accent: 36 40% 90%;
+    --sidebar-accent-foreground: 150 20% 15%;
+    --sidebar-border: 36 20% 88%;
+    --sidebar-ring: 152 35% 28%;
+
+    /* Custom tokens */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --gradient-warm: linear-gradient(135deg, hsl(36 40% 90%), hsl(36 33% 96%));
+    --gradient-primary: linear-gradient(135deg, hsl(152 35% 28%), hsl(152 35% 38%));
+    --shadow-soft: 0 2px 16px -4px hsl(150 20% 15% / 0.08);
+    --shadow-card: 0 1px 8px -2px hsl(150 20% 15% / 0.06);
+
+    /* Habit streak colors */
+    --streak: 38 75% 55%;
+    --streak-foreground: 36 33% 96%;
+    --success: 152 50% 40%;
+    --success-foreground: 36 33% 96%;
+  }
+
+  .dark {
+    --background: 150 15% 8%;
+    --foreground: 36 20% 92%;
+    --card: 150 15% 11%;
+    --card-foreground: 36 20% 92%;
+    --popover: 150 15% 11%;
+    --popover-foreground: 36 20% 92%;
+    --primary: 152 40% 50%;
+    --primary-foreground: 150 15% 8%;
+    --secondary: 150 12% 16%;
+    --secondary-foreground: 36 20% 92%;
+    --muted: 150 12% 16%;
+    --muted-foreground: 36 15% 60%;
+    --accent: 38 70% 50%;
+    --accent-foreground: 150 15% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 36 20% 92%;
+    --border: 150 12% 18%;
+    --input: 150 12% 18%;
+    --ring: 152 40% 50%;
+    --sidebar-background: 150 15% 8%;
+    --sidebar-foreground: 36 20% 92%;
+    --sidebar-primary: 152 40% 50%;
+    --sidebar-primary-foreground: 150 15% 8%;
+    --sidebar-accent: 150 12% 16%;
+    --sidebar-accent-foreground: 36 20% 92%;
+    --sidebar-border: 150 12% 18%;
+    --sidebar-ring: 152 40% 50%;
+    --streak: 38 70% 50%;
+    --streak-foreground: 150 15% 8%;
+    --success: 152 50% 45%;
+    --success-foreground: 150 15% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
